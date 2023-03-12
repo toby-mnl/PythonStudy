@@ -1,7 +1,7 @@
 import numpy as np
 # if this is not working set up env again by typing python3.11 -m venv pythonlearning
 # new_matrix = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
-# print(new_matrix)
+# print(new_matrix)!!
 
 """
 import matplotlib.pyplot as mapy
