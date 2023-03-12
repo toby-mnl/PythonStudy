@@ -27,6 +27,8 @@ main.mainloop()
 list1 = [10, 20, 30, 40, 50, 60]
 print("\n")
 print("Hello")
+print("Hullo!")
+print(" new line")
 print(type(list1))
 print("\n")
 print(list1)
