@@ -1,7 +1,11 @@
+
+
+import pandas as pd
+import time
 import numpy as np
 # if this is not working set up env again by typing python3.11 -m venv pythonlearning
 # new_matrix = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
-# print(new_matrix)!!
+# print(new_matrix)
 
 """
 import matplotlib.pyplot as mapy
@@ -162,3 +166,84 @@ arr15, arr16 = np.vsplit(big_array, 2)
 print(arr15)
 print(arr16)
 # or can split into as many as you want
+
+
+def using_List():
+    t1 = time.time()  # Starting/Initial Time
+    X = range(10000)
+    Y = range(10000)
+    z = [X[i]+Y[i] for i in range(len(X))]
+    return time.time()-t1
+
+
+def using_Numpy():
+    t1 = time.time()  # Starting/Initial Time
+    a = np.arange(10000)
+    b = np.arange(10000)
+    z = a+b  # more convient than a list
+    return time.time()-t1
+
+
+list_time = using_List()
+numpy_time = using_Numpy()
+print(list_time, numpy_time)
+print("In this example Numpy is " +
+      str(list_time/numpy_time)+" times faster than a list")
+print("\n\n")
+# Great examples of size versus reshape
+print("Random matrix using size....")
+print(np.random.randint(1, 100, size=(10, 10)))
+print("\n\n")
+print("Simple Matrix....")
+print(np.arange(100))
+print("\n\n")
+print("Matrix reshaped....")
+print(np.arange(100).reshape(10, 10))
+
+# print(np.random.randint(1, 10, size=(10, 10)))
+# print(np.arange(100).reshape(10, 10))
+print("Random matrix using integers....")
+print(np.random.randint((3, 3, 4)))
+
+data = [1, 2, 3, 4, 5]
+Series1 = pd.Series(data)
+print("Series....")
+print(Series1)
+print("Series reindexed....")
+Series1 = pd.Series(data, index=['a', 'b', 'c', 'd', 'e'])
+print(Series1)
+df = pd.DataFrame(data)
+print("DataFrame....")
+print(df)
+dictionary = {'fruits': ['apples', 'bananas', 'mangoes'], 'count': [
+    10, 20, 15], 'date': ['02/03/23', '25/09/23', '22/09/23']}
+df = pd.DataFrame(dictionary)
+print("Dataframe using a dictionary as input")
+print(df)
+# dataframe using Series
+print("\n\n")
+print("dataframe using Series....")
+series = pd.Series([6, 12], index=['a', 'b'])
+df = pd.DataFrame(series)
+print(df)
+# creating a dataframe using a numpy array from a list
+print("\n\n")
+# creating a dataframe using a numpy array from a list
+print("\n\n")
+print("dataframe using numpy array using a list....")
+list1 = [[50000, 60000], ['John', 'James']]
+print("\n\n list")
+print(list1)
+print("\n\n array")
+numpyarray = np.array(list1)
+print(numpyarray)
+print("\n\n Dataframe")
+df = pd.DataFrame({'NAME': numpyarray[1], 'SALARY': numpyarray[0]})
+print(df)
+# How to merge Dataframes
+print("\n\n Dataframe")
+player = ['Player1', 'Player2', 'Player3']
+point = [8, 9, 6]
+title = ['Game1', 'Game2', 'Game3']
+df1 = pd.DataFrame({'Player': player, 'Points': point, 'Title': title})
+print(df1)
