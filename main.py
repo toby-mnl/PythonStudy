@@ -241,9 +241,34 @@ print("\n\n Dataframe")
 df = pd.DataFrame({'NAME': numpyarray[1], 'SALARY': numpyarray[0]})
 print(df)
 # How to merge Dataframes
-print("\n\n Dataframe")
 player = ['Player1', 'Player2', 'Player3']
 point = [8, 9, 6]
 title = ['Game1', 'Game2', 'Game3']
 df1 = pd.DataFrame({'Player': player, 'Points': point, 'Title': title})
+print("\n\n Dataframe1")
 print(df1)
+player = ['Player1', 'Player5', 'Player6']
+power = ['Punch', 'Kick', 'Elbow']
+title = ['Game1', 'Game3', 'Game6']
+df2 = pd.DataFrame({'Player': player, 'Power': power, 'Title': title})
+print("\n\n Dataframe2")
+print(df2)
+print("\n\n")
+print("Inner Merge.....")
+print(df1.merge(df2, on='Title', how='inner'))
+print("\n\n")
+print("Left Merge.....")
+print(df1.merge(df2, on='Title', how='left'))
+print("\n\n")
+print("right Merge.....")
+print(df1.merge(df2, on='Title', how='right'))
+print("\n\n")
+print("Outer Merge.....")
+print(df1.merge(df2, on='Title', how='outer'))
+print("How to do a join operation in Pandas")
+player = ['Player1', 'Player5', 'Player6']
+power = ['Punch', 'Kick', 'Elbow']
+title = ['Game1', 'Game3', 'Game6']
+df3 = pd.DataFrame({'Players': player, 'Power': power,
+                   'Games': title}, index=['L1', 'L2', 'L3'])
+print(df3)
